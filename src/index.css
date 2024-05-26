@@ -1,0 +1,9 @@
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+body {
+    box-sizing: inherit;
+    margin: 2rem;
+}
