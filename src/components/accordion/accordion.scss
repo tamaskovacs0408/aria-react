@@ -1,0 +1,44 @@
+.accordion-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid dodgerblue;
+    width: 30%;
+    padding: 1rem;
+}
+
+.accordion-container {
+    width: 100%;
+}
+
+.accordion-header {
+    padding: .5rem;
+    border: 1px solid gray;
+
+    h3 {
+        margin: 0;
+    }
+
+    button {
+        display: inline-block;
+        width: 100%;
+        background: transparent;
+        border: none;
+        text-align: left;
+        font-size: 1.3rem;
+        cursor: pointer;
+        color: red;
+    }
+}
+
+.accordion-panel {
+    display: none;
+    padding: .5rem;
+    font-size: 1.1rem;
+    border: 1px solid gray;
+    transition: all ease-in-out .2s;
+
+    &.open {
+        display: block;
+    }
+}
