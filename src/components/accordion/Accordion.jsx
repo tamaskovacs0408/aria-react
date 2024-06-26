@@ -1,16 +1,14 @@
 import { useState } from "react";
-
 import "./accordion.scss";
 
 export default function Accordion() {
-  const [activePanel, setActivePanel] = useState(null);
+  const [activePanels, setActivePanels] = useState({});
 
   function handleAccordionPanel(panelIndex) {
-    if (activePanel === panelIndex) {
-      setActivePanel(null);
-    } else {
-      setActivePanel(panelIndex);
-    }
+    setActivePanels(prevState => ({
+      ...prevState,
+      [panelIndex]: !prevState[panelIndex],
+    }));
   }
 
   return (
@@ -22,7 +20,7 @@ export default function Accordion() {
               <h3>
                 <button
                   onClick={() => handleAccordionPanel(panelIndex)}
-                  className={activePanel === panelIndex ? "active" : ""}
+                  className={activePanels[panelIndex] ? "active" : ""}
                 >
                   {panelIndex === 0
                     ? "Open first panel"
@@ -34,7 +32,7 @@ export default function Accordion() {
             </div>
             <div
               className={`accordion-panel ${
-                activePanel === panelIndex ? "open" : ""
+                activePanels[panelIndex] ? "open" : ""
               }`}
             >
               <p>
