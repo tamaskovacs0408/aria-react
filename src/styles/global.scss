@@ -1,0 +1,15 @@
+@use "./_variables.scss" as variables;
+
+html {
+    font-size: variables.$base-font-size;
+    box-sizing: border-box;
+}
+
+body {
+    box-sizing: inherit;
+    font-family: variables.$primary-font;
+    margin: 0;
+    padding: 0;
+    background-color: variables.$body-bg;
+    color: variables.$main-text-color;
+}
