@@ -17,8 +17,17 @@ export default function AlertDialog() {
     setOpenModal(true);
   }
 
-  function closeModalHandler() {
+  function handleCloseModal() {
     setOpenModal(false);
+  }
+
+  function handleDeleteTextarea() {
+    textAreaRef.current.value = "";
+    
+    setTimeout(() => {
+      setOpenModal(false);
+      textAreaRef.current.focus();
+    }, 200)
   }
 
   return (
@@ -32,14 +41,15 @@ export default function AlertDialog() {
           ref={textAreaRef}
         ></textarea>
         <div className={classes["button-container"]}>
-          <button>Save</button>
+          <button onClick={() => console.log(textAreaRef.current.focus())}>Save</button>
           <button onClick={handleButtonClick}>Discard</button>
         </div>
       </div>
       <AlertDialogModalPortal
         isModalOpen={openModal}
-        modalHandler={closeModalHandler}
+        modalHandler={handleCloseModal}
         textAreaValue={textAreaValue}
+        deleteNotes={handleDeleteTextarea}
       />
     </>
   );
