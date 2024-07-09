@@ -1,29 +1,20 @@
-import { forwardRef } from "react";
 import classes from "./AlertDialogModal.module.scss";
 
-const AlertDialogModal = forwardRef(
-  ({ isModalOpen, modalHandler, isSaveButton }, ref) => {
+export default function AlertDialogModal ({ isModalOpen, modalHandler, textAreaValue }) {
+
+    let notes = textAreaValue.value;
+
+
     return (
       isModalOpen && (
-        <div className={classes["modal-wrapper"]} onClick={modalHandler}>
-          <div className={classes["modal-container"]} ref={ref}>
-            {isSaveButton ? (
-              <>
-                <h2>Save Action</h2>
-                <p>Content for save action.</p>
-              </>
-            ) : (
-              <>
-                <h2>Discard Action</h2>
-                <p>Content for discard action.</p>
-              </>
-            )}
+        <div className={classes["modal-wrapper"]}>
+          <div className={classes["modal-container"]}>
+            <h2>Confirmation</h2>
+            <p>Are you sure want to discard all of your notes?</p>
+            <p>{notes.split(" ").length} words will be deleted.</p>
             <button onClick={modalHandler}>Close</button>
           </div>
         </div>
       )
     );
   }
-);
-
-export default AlertDialogModal;

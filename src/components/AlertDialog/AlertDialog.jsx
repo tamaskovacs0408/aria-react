@@ -8,14 +8,17 @@ const textAteraValue =
 
 export default function AlertDialog() {
   const [openModal, setOpenModal] = useState(false);
-  const [isSaveButton, setisSaveButton] = useState(false);
+  const [textAreaValue, setTextAreaValue] = useState("");
 
-  const saveButtonRef = useRef();
-  const discardButtonRef = useRef();
+  const textAreaRef = useRef();
 
-  function handleButtonClick(isSaveButton) {
-    setisSaveButton(isSaveButton)
-    setOpenModal(prevState => !prevState);
+  function handleButtonClick() {
+    setTextAreaValue(textAreaRef.current);
+    setOpenModal(true);
+  }
+
+  function closeModalHandler() {
+    setOpenModal(false);
   }
 
   return (
@@ -26,21 +29,17 @@ export default function AlertDialog() {
           name='notes'
           id='notes'
           defaultValue={textAteraValue}
+          ref={textAreaRef}
         ></textarea>
         <div className={classes["button-container"]}>
-          <button ref={saveButtonRef} onClick={() => handleButtonClick(true)}>
-            Save
-          </button>
-          <button ref={discardButtonRef} onClick={() => handleButtonClick(false)}>
-            Discard
-          </button>
+          <button>Save</button>
+          <button onClick={handleButtonClick}>Discard</button>
         </div>
       </div>
       <AlertDialogModalPortal
         isModalOpen={openModal}
-        ref={isSaveButton ? saveButtonRef : discardButtonRef}
-        isSaveButton={isSaveButton}
-        modalHandler={handleButtonClick}
+        modalHandler={closeModalHandler}
+        textAreaValue={textAreaValue}
       />
     </>
   );
