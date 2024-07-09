@@ -36,7 +36,7 @@
         transition: all 0.3s ease;  
 
         &:has(> :global(.active)) {
-            box-shadow: 1px 1px 4px 3px #fff;
+            box-shadow: 0 0 10px 5px #fff;
             border-color: transparent;
           }
 
