@@ -41,7 +41,7 @@ export default function AlertDialog() {
           ref={textAreaRef}
         ></textarea>
         <div className={classes["button-container"]}>
-          <button onClick={() => console.log(textAreaRef.current.focus())}>Save</button>
+          <button>Save</button>
           <button onClick={handleButtonClick}>Discard</button>
         </div>
       </div>
