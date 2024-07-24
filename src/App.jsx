@@ -8,8 +8,16 @@ const routerSettings = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
-      { index: true, element: <Accordion /> },
-      { path: "alertdialog", element: <AlertDialog /> },
+      {
+        index: true,
+        element: <Accordion />,
+        handle: { crumb: () => "Accordion" },
+      },
+      {
+        path: "alertdialog",
+        element: <AlertDialog />,
+        handle: { crumb: () => "Alertdialog" },
+      },
     ],
   },
 ]);
