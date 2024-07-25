@@ -7,6 +7,7 @@ export default function Navbar() {
             <ul>
                 <li><NavLink to="/" end>Accordion</NavLink></li>
                 <li><NavLink to="/alertdialog">Alertdialog</NavLink></li>
+                <li><NavLink to="/buttons">Buttons</NavLink></li>
             </ul>
         </nav>
   )
