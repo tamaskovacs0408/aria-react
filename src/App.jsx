@@ -2,6 +2,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
 import Accordion from "./components/Accordion/Accordion";
 import AlertDialog from "./components/AlertDialog/AlertDialog";
+import Buttons from "./components/Buttons/Buttons";
+import ActionButton from "./components/Buttons/ActionButton/ActionButton";
 
 const routerSettings = createBrowserRouter([
   {
@@ -17,6 +19,18 @@ const routerSettings = createBrowserRouter([
         path: "alertdialog",
         element: <AlertDialog />,
         handle: { crumb: () => "Alertdialog" },
+      },
+      {
+        path: "buttons",
+        element: <Buttons />,
+        handle: { crumb: () => "Buttons" },
+        children: [
+          {
+            path: "actionbutton",
+            element: <ActionButton />,
+            handle: { crumb: () => "Actionbutton" },
+          },
+        ],
       },
     ],
   },
