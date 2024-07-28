@@ -1,3 +1,5 @@
+@use "../styles/_variables.scss" as variables;
+
 .navbar {
     position: relative;
     top: 0;
@@ -8,7 +10,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background: dodgerblue;
+    background: variables.$main-color;
 
     ul,
     li,

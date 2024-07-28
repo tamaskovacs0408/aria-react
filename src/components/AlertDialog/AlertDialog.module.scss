@@ -1,3 +1,5 @@
+@use "../../styles/variables" as variables;
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -30,8 +32,8 @@
 
     button {
         background: transparent;
-        border: 2px solid dodgerblue;
-        color: dodgerblue;
+        border: 2px solid variables.$main-color;
+        color: variables.$main-color;
         font-size: 1.8rem;
         font-weight: 600;
         padding: .8rem;
@@ -40,7 +42,7 @@
         transition: box-shadow .2s ease-in;
 
         &:hover {
-            box-shadow: 1px 1px 2px 1px dodgerblue;
+            box-shadow: 1px 1px 2px 1px variables.$main-color;
         }
     }
 }

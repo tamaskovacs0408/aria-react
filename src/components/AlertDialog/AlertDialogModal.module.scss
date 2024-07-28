@@ -1,3 +1,5 @@
+@use "../../styles/variables" as variables;
+
 .modal-wrapper {
     position: absolute;
     top: 0;
@@ -41,7 +43,7 @@
     gap: 1rem;
 
     button {
-        background: dodgerblue;
+        background: variables.$main-color;
         color: white;
         border: none;
         font-size: 2rem;

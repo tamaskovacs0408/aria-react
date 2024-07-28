@@ -1,8 +1,11 @@
+
+@use "../../styles/variables" as variables; 
+
 .accordion-wrapper {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border: 2px solid dodgerblue;
+    border: 2px solid variables.$main-color;
     width: 30%;
     padding: 1.8rem;
 }
