@@ -1,0 +1,56 @@
+@use "../../../styles/variables"as variables;
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.btn {
+    position: relative;
+    font-size: 1.8rem;
+    border: 2px solid variables.$main-color;
+    border-radius: .5rem;
+    background: variables.$main-color;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    transition: background .1s ease-out;
+    cursor: pointer;
+
+    &:hover {
+        background: rgb(0, 126, 253);
+    }
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+    margin: 0;
+    border: 2px solid variables.$main-color;
+    border-radius: .5rem;
+
+    li {
+        list-style: none;
+        display: inline-block;
+        text-align: center;
+        border-radius: .5rem;
+        padding: .5rem;
+        font-size: 1.6rem;
+        color: variables.$main-color;
+        transition: all .1s ease-in;
+        width: 100%;
+        cursor: default;
+
+        &:hover {
+            color: white;
+            background: variables.$main-color;
+        }
+    }
+}

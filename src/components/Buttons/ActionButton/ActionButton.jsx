@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import classes from "./ActionButton.module.scss";
+
 export default function ActionButton() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -8,10 +10,10 @@ export default function ActionButton() {
   }
 
   return (
-    <div>
-      <button onClick={handleButtonClick}>Actions</button>
+    <div className={classes.wrapper}>
+      <button className={classes.btn} onClick={handleButtonClick}>Actions</button>
       {isOpen && (
-      <ul>
+      <ul className={classes.actions}>
         <li>Action 1</li>
         <li>Action 2</li>
         <li>Action 3</li>
