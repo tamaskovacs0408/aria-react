@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
-import Accordion from "./components/Accordion/Accordion";
+import Accordion from "./components/accordion/Accordion";
 import AlertDialog from "./components/AlertDialog/AlertDialog";
 import Buttons from "./components/Buttons/Buttons";
 import ActionButton from "./components/Buttons/ActionButton/ActionButton";
